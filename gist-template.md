@@ -1,12 +1,9 @@
-# Title Explaining Regular Expressions
+# Title: Explaining  Regular Expressions
 
-It all comes down to pattern matching with text. This gist is about understanding each component, what it is and does etc. 
+It all comes down to pattern matching with text. This gist is about understanding each component, what it is and does, etc.
 
 ## Summary
- For this assignment I chose to use this regular expression. /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/, 
- This is the one that is responsible for matching email addresses. Refer to the table of contents below for a further explanation of each of the 
- components that make up a regular expression. We will go over each in detail.
-
+For this assignment, I chose to use this regular expression: `/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})/`. This is the one that is responsible for matching email addresses. Refer to the table of contents below for a further explanation of each of the components that make up a regular expression. We will go over each in detail.
 
 ## Table of Contents
 
@@ -26,26 +23,42 @@ It all comes down to pattern matching with text. This gist is about understandin
 
 ### Anchors
 
+In the given expression that I discussed in the introduction, they use Anchors (`^` and `$`). These signify where a string begins and ends. This one `^` appears at the beginning of a string, and `$` appears at the end of a string.
+
+**Example:**
+- `^Adam.Olson@gmail.com$`
+
 ### Quantifiers
+
+Quantifiers tell you how many times a character shows up in a string. These are the most common examples.
+
+- `*` - Matches zero or more occurrences.
+- `+` - Matches one or more occurrences.
+- `?` - Matches zero or one occurrence (optional).
+- `{n}` - Matches exactly n occurrences.
+- `{n,}` - Matches n or more occurrences.
+- `{n,m}` - Matches between n and m occurrences.
+
+**Example:**
+- `mystical-dragon@gmail.com`: `([a-z0-9_\.-]+)` matches 'mystical-dragon'. This ensures that there is one or more lowercase letters, digits, underscores, hyphens, or dots.
 
 ### OR Operator
 
+The OR Operator (`|`) allows you to match one of several alternatives. It's like having multiple options for a specific part of your pattern. For example, you can match 'wizard' or 'sorcerer' in a text.
+
+**Example:**
+- `(wizard|sorcerer)@fantasy-realm.com` matches either 'wizard@fantasy-realm.com' or 'sorcerer@fantasy-realm.com' in an email address.
+
 ### Character Classes
+
+Character Classes allow you to match specific characters or ranges of characters. For instance, you can match any vowel in a string.
+
+**Example:**
+- `[aeiou]@magical-vowels.com` matches any single vowel followed by '@magical-vowels.com' in an email address.
 
 ### Flags
 
-### Grouping and Capturing
+Flags change the behavior of a regex pattern. The `i` flag makes the pattern case-insensitive, allowing you to match text regardless of letter case.
 
-### Bracket Expressions
-
-### Greedy and Lazy Match
-
-### Boundaries
-
-### Back-references
-
-### Look-ahead and Look-behind
-
-## Author
-
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+**Example:**
+- `/wizard/i@fantasy-magic.org` matches 'Wizard@fantasy-magic.org' case-insensitively.
