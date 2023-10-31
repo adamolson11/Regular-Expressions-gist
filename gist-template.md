@@ -62,3 +62,23 @@ Flags change the behavior of a regex pattern. The `i` flag makes the pattern cas
 
 **Example:**
 - `/wizard/i@fantasy-magic.org` matches 'Wizard@fantasy-magic.org' case-insensitively.
+
+### Grouping and Capturing
+
+Grouping and capturing are used to extract specific parts of a pattern. They are enclosed in parentheses `()`. For instance, you can capture a hero's name from a superhero-themed email address.
+
+**Example:**
+- `(superman|batman)@(heroes).com` captures the hero's name and 'heroes' in 'superman@heroes.com'.
+
+### Bracket Expressions
+
+Bracket expressions allow you to match a range of characters. You can match any single digit in a string.
+
+**Example:**
+- `[0-9]@digit-domain.com` matches any single digit followed by '@digit-domain.com' in an email address.
+
+### Greedy and Lazy Match
+
+Greedy matching is the default behavior of regex, where it matches as much as possible. Lazy matching, denoted by `?`, matches as little as possible. This can be used to match text within HTML tags.
+
+
