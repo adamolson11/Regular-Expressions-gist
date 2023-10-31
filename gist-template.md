@@ -81,4 +81,30 @@ Bracket expressions allow you to match a range of characters. You can match any 
 
 Greedy matching is the default behavior of regex, where it matches as much as possible. Lazy matching, denoted by `?`, matches as little as possible. This can be used to match text within HTML tags.
 
+**Example:**
+- `<.*?>` matches the text within the first HTML tag in a document. Lazy match ensures it doesn't match the entire document.
+
+### Boundaries
+
+Boundaries, such as `\b`, match specific positions in the string. They can be used to match whole words. For example, you can match 'magic' as a whole word in a text.
+
+**Example:**
+- `\bmagic\b@spellbook.com` matches 'magic' as a whole word, not as part of another word, followed by '@spellbook.com'.
+
+### Back-references
+
+Back-references allow you to match a previously captured group again within the same regex. This is particularly useful for matching repeating patterns.
+
+**Example:**
+- `(\d{2})-(\1)@repeating-numbers.com` matches '12-12@repeating-numbers.com', where the same two digits are repeated.
+
+### Look-ahead and Look-behind
+
+Look-ahead and look-behind are used to assert that a pattern is or isn't followed by specific text, without including that text in the match. For example, you can match an email address only if it's followed by '@example.com'.
+
+**Example:**
+- `johndoe(?=@example.com)` matches 'johndoe' only if it's followed by '@example.com'.
+
+## Author
+
 
